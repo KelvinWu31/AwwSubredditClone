@@ -7,13 +7,13 @@ function App() {
   const [subreddit, setSubreddit] = useState('Aww');
   const [loading, setLoading] = useState(true);
 
-  const handleScroll = (event) => {
+ /* const handleScroll = (event) => {
     const {scrollTop, clientHeight, scrollHeight} = event.currentTarget; 
     
     if(scrollHeight - scrollTop === clientHeight){ 
       setArticles(prev => prev + 1)
     }
-  } /* I ran into a issue here trying to implement the infinite scroll into useEffect, 
+  }  I ran into a issue here trying to implement the infinite scroll into useEffect, 
         I believe there may be 2 issues that I am currently running into: 
          - the api link that i am currently calling from doesn't accept page numbers to receive more data
          - I am not too sure the proper way to implement pages with what I have so far. 
@@ -43,12 +43,10 @@ function App() {
         <h1> R/Aww </h1>
         <h2>A subreddit for cute and cuddly pictures</h2>
       </header>
-      <div className="articles"  onScroll={handleScroll}>
+      <div className="articles"  /*onScroll={handleScroll}*/>
         {
         (articles != null) ? articles.map((article, index) => <Article  key={index} article ={article.data} />) : ''
         }
-      
-
       </div>
     </div>
   );
